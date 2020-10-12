@@ -23,8 +23,6 @@ Route::any('bar', function () {
 Route::post('login', 'App\Http\Controllers\ApiController@login');
 Route::post('register',  [ApiController::class, 'register']);
 
-Route::post('test',  [ApiController::class, 'test']);
-
 Route::group(['middleware' => 'auth.jwt'], function () {
     Route::get('logout', 'App\Http\Controllers\ApiController@logout');
 
